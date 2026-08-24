@@ -19,3 +19,5 @@ Local: Discovery and creation of geolocated events.
 Optimistic UI: Implemented instant UI updates for messaging and posting, with temporary IDs and error rollbacks.
 Real-time Synchronization: Subscriptions to Supabase Realtime for live messaging and feed updates, with duplicate checking.
 Crash Prevention: Strict use of optional chaining (?.) and fallbacks to handle null relational data from Supabase and prevent white screens.
+
+© 2026 Edgard Djahoui. All Rights Reserved.
