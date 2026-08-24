@@ -1,0 +1,127 @@
+/* 🌟 1. MODE CLAIR (Par défaut) */
+:root {
+  /* Fonds & Cartes */
+  --bg-global: #e2e6ee; /* Le fond gris derrière les cartes */
+  --bg-primary: #e2e6ee; /* Alias pour les pages entières */
+  --bg-card: #ffffff; /* Le fond des cartes/posts */
+  --bg-secondary: #f4f5f7; /* Fond secondaire (hover, etc) */
+  --input-bg: #f1f5f9; /* Fond des inputs */
+  
+  /* Textes */
+  --text-primary: #1a1a1a; /* Texte noir */
+  --text-secondary: #64748b; /* Texte gris */
+  --text-on-accent: #ffffff; /* Texte sur les boutons colorés */
+  
+  /* Bordures & Ombres */
+  --border-color: #e2e8f0;
+  --backdrop-bg: rgba(0, 0, 0, 0.6); /* Fond des modals */
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 15px 30px rgba(0, 0, 0, 0.15);
+  --shadow-accent: 0 4px 10px rgba(124, 58, 237, 0.3);
+  
+  /* Couleurs d'actions Miwavo */
+  --miwa-action-color: #7C3AED;
+  --miwa-action-color-hover: #6D28D9;
+  --accent-gradient: linear-gradient(135deg, #7C3AED 0%, #F97316 100%);
+  
+  /* Statuts (Succès, Danger, Warning) */
+  --status-success-bg: #ECFDF5;
+  --status-success-text: #059669;
+  --status-success-border: #A7F3D0;
+  
+  --status-danger-bg: #FEF2F2;
+  --status-danger-text: #DC2626;
+  --status-danger-border: #FECACA;
+  
+  --status-warning-bg: #FFFBEB;
+  --status-warning-text: #D97706;
+  --status-warning-border: #FDE68A;
+}
+
+/* 🌟 2. MODE SOMBRE */
+body.dark-mode {
+  /* Fonds & Cartes => NOIR PUR */
+  --bg-global: #000000; /* Fond noir absolu ! */
+  --bg-primary: #000000; 
+  --bg-card: #1E1E1E; /* Cartes gris très foncé (évite le bleu nuit pour matcher le noir) */
+  --bg-secondary: #121212; 
+  --input-bg: #2A2A2A; /* Inputs gris foncé */
+  
+  /* Textes */
+  --text-primary: #f1f5f9; /* Texte blanc */
+  --text-secondary: #94a3b8; /* Texte gris clair */
+  --text-on-accent: #ffffff;
+  
+  /* Bordures & Ombres (Plus denses en dark) */
+  --border-color: #333333;
+  --backdrop-bg: rgba(0, 0, 0, 0.85);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.6);
+  --shadow-elevated: 0 15px 30px rgba(0, 0, 0, 0.8);
+  --shadow-accent: 0 4px 15px rgba(124, 58, 237, 0.5);
+  
+  /* Couleurs d'actions Miwavo (Légèrement éclaircies pour le contraste sur fond noir) */
+  --miwa-action-color: #A78BFA;
+  --miwa-action-color-hover: #8B5CF6;
+  --accent-gradient: linear-gradient(135deg, #8B5CF6 0%, #FB923C 100%);
+  
+  /* Statuts Dark Mode (Fonds opaques et texte lumineux) */
+  --status-success-bg: rgba(16, 185, 129, 0.15);
+  --status-success-text: #34D399;
+  --status-success-border: rgba(16, 185, 129, 0.3);
+  
+  --status-danger-bg: rgba(239, 68, 68, 0.15);
+  --status-danger-text: #F87171;
+  --status-danger-border: rgba(239, 68, 68, 0.3);
+  
+  --status-warning-bg: rgba(245, 158, 11, 0.15);
+  --status-warning-text: #FBBF24;
+  --status-warning-border: rgba(245, 158, 11, 0.3);
+}
+
+/* =========================================
+   BOUTON TOGGLE
+   ========================================= */
+.theme-toggle-btn {
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2rem; /* Pour bien afficher l'emoji 🌙 / ☀️ */
+}
+
+.theme-toggle-btn:hover {
+  transform: rotate(20deg) scale(1.05);
+  background-color: var(--border-color);
+}
+
+/* =========================================
+   RÈGLES GLOBALES HTML / BODY
+   ========================================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100dvh; 
+  background-color: var(--bg-global); 
+  color: var(--text-primary);
+  overflow-x: hidden; 
+  -webkit-overflow-scrolling: touch;
+  /* Transition douce sur TOUT le body */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+  min-height: 100dvh; 
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-global);
+  transition: background-color 0.3s ease;
+}

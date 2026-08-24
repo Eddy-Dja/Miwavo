@@ -1,0 +1,475 @@
+/* ======================== */
+/* ONBOARDING - LAYOUT      */
+/* ======================== */
+
+/* L'écran de fond qui centre tout */
+.onboarding-wrapper {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 24px;
+  background-color: var(--bg-global); 
+  z-index: 9999; 
+  overflow-y: auto; 
+  box-sizing: border-box; 
+}
+
+/* Le rectangle blanc */
+.onboarding-container {
+  max-width: 650px; 
+  width: 100%; 
+  margin: 0; 
+  padding: 50px 32px; 
+  min-height: auto; 
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border-radius: 32px; 
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); 
+  border: 1px solid var(--border-color); 
+  box-sizing: border-box; 
+}
+
+/* En-tête de progression avec le texte */
+.progress-header {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.step-text {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #7c3aed;
+  margin-bottom: 16px;
+}
+
+/* Barre de progression */
+.progress-bar {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.progress-step {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--border-color);
+  transition: background-color 0.3s ease;
+}
+
+.progress-step.active {
+  background-color: #7c3aed;
+}
+
+/* Étape du Wizard */
+.wizard-step {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1; 
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.wizard-step h1 {
+  font-size: 2.4rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.wizard-step p {
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ======================== */
+/* CHOIX DU SEXE            */
+/* ======================== */
+
+.gender-selection {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.gender-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px 20px;
+  border-radius: 24px;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-card);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gender-card:hover {
+  border-color: var(--text-secondary);
+  background-color: var(--input-bg);
+  transform: translateY(-2px);
+}
+
+.gender-card.selected {
+  border-color: #7c3aed;
+  background-color: rgba(124, 58, 237, 0.1);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.15);
+}
+
+.gender-emoji {
+  font-size: 4rem;
+}
+
+.gender-label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.gender-card.selected .gender-label {
+  color: #7c3aed;
+}
+
+/* ======================== */
+/* CHAMPS DE TEXTE          */
+/* ======================== */
+
+.name-inputs-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 2px solid var(--border-color);
+  background-color: var(--input-bg);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+  outline: none;
+  box-sizing: border-box; 
+}
+
+.input-group input:focus {
+  border-color: #7c3aed;
+  background-color: var(--bg-card);
+}
+
+.username-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 0 20px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.username-input-wrapper:focus-within {
+  border-color: #7c3aed;
+  background-color: var(--bg-card);
+}
+
+.username-at {
+  color: var(--text-secondary);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 4px;
+}
+
+.username-input {
+  flex: 1;
+  padding: 18px 0;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  outline: none;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* ======================== */
+/* BOUTONS                  */
+/* ======================== */
+
+.wizard-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  color: white;
+}
+
+/* Bouton Seul (Étape 1) - Forme Pilule */
+.wizard-step > .wizard-btn {
+  align-self: flex-end; 
+  margin-top: 28px;
+  flex: none; 
+  border-radius: 50px; 
+  padding: 16px 40px;
+  background-color: #7c3aed; 
+}
+
+.wizard-step > .wizard-btn:hover:not(:disabled) {
+  background-color: #6d28d9;
+  transform: translateY(-1px);
+}
+
+.wizard-step > .wizard-btn:disabled {
+  background-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.username-status-feedback {
+  min-height: 20px; 
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+
+.checking-text {
+  color: #f59e0b; 
+  margin: 0;
+}
+
+.success-text {
+  color: #10b981; 
+  margin: 0;
+}
+
+/* Navigation double (Étapes 2, 3, 4) */
+.wizard-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto; 
+  padding-top: 20px;
+}
+
+.wizard-nav .wizard-btn {
+  padding: 16px 24px;
+  border-radius: 16px;
+  background-color: #7c3aed;
+  flex: 1; 
+}
+
+.wizard-nav .wizard-btn:hover:not(:disabled) {
+  background-color: #6d28d9;
+}
+
+.wizard-nav .wizard-btn:disabled {
+  background-color: var(--border-color);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+}
+
+.wizard-nav .wizard-btn.secondary {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+  flex: 0.6;
+}
+
+.wizard-nav .wizard-btn.secondary:hover {
+  background-color: var(--input-bg);
+  border-color: var(--text-secondary);
+}
+
+.wizard-nav .finish-btn {
+  background-color: #10b981;
+}
+
+.wizard-nav .finish-btn:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+/* ======================== */
+/* UPLOAD / PASSIONS / RECHERCHES */
+/* ======================== */
+
+.upload-area {
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 2px dashed var(--text-secondary);
+  border-radius: 24px;
+  background-color: var(--input-bg);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 32px;
+  padding: 40px;
+}
+
+.upload-area svg { width: 48px; height: 48px; color: var(--text-secondary); }
+.upload-area:hover { border-color: #7c3aed; background-color: rgba(124, 58, 237, 0.1); color: #7c3aed; }
+.upload-area:hover svg { color: #7c3aed; }
+
+.tags-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+
+
+/* ======================== */
+/* STYLE DES TAGS PASSIONS  */
+/* ======================== */
+
+.tag-select-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid;
+  background-color: transparent;
+}
+
+.tag-select-btn:hover { border-color: var(--text-secondary); }
+
+/* État Sélectionné : Couleur vive, texte blanc */
+.tag-select-btn.selected {
+  color: white !important;
+  border-color: transparent !important;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* État Maxed Out (10 sélectionnés, et celui-ci ne l'est pas) */
+.tag-select-btn.maxed-out {
+  opacity: 0.6 !important; 
+  cursor: not-allowed !important; 
+  border-style: dashed !important;
+  /* On force les couleurs à devenir toutes grises pour enlever l'éclat */
+  background-color: var(--input-bg) !important; 
+  color: var(--text-secondary) !important; 
+  border-color: var(--border-color) !important;
+}
+
+
+/* ======================== */
+/* PALETTE DE 20 COULEURS   */
+/* ======================== */
+
+/* Base Pastel / Sélection Intense */
+.tag-purple { background-color: rgba(124, 58, 237, 0.1); border-color: rgba(124, 58, 237, 0.3); color: #7C3AED; }
+.tag-purple.selected { background-color: #7C3AED; }
+
+.tag-orange { background-color: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); color: #EA580C; }
+.tag-orange.selected { background-color: #EA580C; }
+
+.tag-blue { background-color: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); color: #2563EB; }
+.tag-blue.selected { background-color: #2563EB; }
+
+.tag-green { background-color: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #059669; }
+.tag-green.selected { background-color: #059669; }
+
+.tag-pink { background-color: rgba(236, 72, 153, 0.1); border-color: rgba(236, 72, 153, 0.3); color: #DB2777; }
+.tag-pink.selected { background-color: #DB2777; }
+
+.tag-yellow { background-color: rgba(234, 179, 8, 0.1); border-color: rgba(234, 179, 8, 0.3); color: #A16207; }
+.tag-yellow.selected { background-color: #EAB308; color: #422006 !important; } 
+
+.tag-red { background-color: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); color: #DC2626; }
+.tag-red.selected { background-color: #DC2626; }
+
+.tag-cyan { background-color: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.3); color: #0E7490; }
+.tag-cyan.selected { background-color: #06B6D4; }
+
+.tag-indigo { background-color: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.3); color: #4F46E5; }
+.tag-indigo.selected { background-color: #4F46E5; }
+
+.tag-teal { background-color: rgba(20, 184, 166, 0.1); border-color: rgba(20, 184, 166, 0.3); color: #0D9488; }
+.tag-teal.selected { background-color: #14B8A6; }
+
+.tag-fuchsia { background-color: rgba(192, 38, 211, 0.1); border-color: rgba(192, 38, 211, 0.3); color: #A21CAF; }
+.tag-fuchsia.selected { background-color: #C026D3; }
+
+.tag-lime { background-color: rgba(132, 204, 22, 0.1); border-color: rgba(132, 204, 22, 0.3); color: #4D7C0F; }
+.tag-lime.selected { background-color: #84CC16; color: #1A2E05 !important; } 
+
+.tag-amber { background-color: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: #B45309; }
+.tag-amber.selected { background-color: #F59E0B; color: #451A03 !important; } 
+
+.tag-emerald { background-color: rgba(5, 150, 105, 0.1); border-color: rgba(5, 150, 105, 0.3); color: #065F46; }
+.tag-emerald.selected { background-color: #059669; }
+
+.tag-sky { background-color: rgba(14, 165, 233, 0.1); border-color: rgba(14, 165, 233, 0.3); color: #0369A1; }
+.tag-sky.selected { background-color: #0EA5E9; }
+
+.tag-rose { background-color: rgba(244, 63, 94, 0.1); border-color: rgba(244, 63, 94, 0.3); color: #BE123C; }
+.tag-rose.selected { background-color: #F43F5E; }
+
+.tag-slate { background-color: rgba(100, 116, 139, 0.1); border-color: rgba(100, 116, 139, 0.3); color: #475569; }
+.tag-slate.selected { background-color: #64748B; }
+
+.tag-zinc { background-color: rgba(113, 113, 122, 0.1); border-color: rgba(113, 113, 122, 0.3); color: #52525B; }
+.tag-zinc.selected { background-color: #71717A; }
+
+.tag-brown { background-color: rgba(161, 98, 7, 0.1); border-color: rgba(161, 98, 7, 0.3); color: #92400E; }
+.tag-brown.selected { background-color: #A16207; }
+
+.tag-gold { background-color: rgba(234, 179, 8, 0.15); border-color: rgba(234, 179, 8, 0.4); color: #854D0E; }
+.tag-gold.selected { background-color: #EAB308; color: #422006 !important; }
+
+
+.search-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+.search-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 28px 16px; border-radius: 24px; border: 2px solid var(--border-color); background-color: var(--bg-card); cursor: pointer; transition: all 0.2s; }
+.search-card:hover { border-color: var(--text-secondary); transform: translateY(-2px); }
+.search-card.selected { border-color: #7c3aed; background-color: rgba(124, 58, 237, 0.1); }
+.search-emoji { font-size: 3rem; }
+.search-label { font-weight: 700; color: var(--text-secondary); font-size: 1.1rem; }
+.search-card.selected .search-label { color: #7c3aed; }
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

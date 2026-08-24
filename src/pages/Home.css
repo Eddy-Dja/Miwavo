@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-global);
+  color: var(--text-primary);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   STRUCTURE GLOBALE
+   ========================================= */
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 10;
+}
+
+.header-logo {
+  width: 100px;
+}
+
+.header-right {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 8px;
+}
+
+.header-link {
+  color: #7C3AED;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   CONTENU PRINCIPAL (2 COLONNES)
+   ========================================= */
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+/* =========================================
+   PARTIE GAUCHE
+   ========================================= */
+
+   /* Pour aligner Prénom et Nom sur la même ligne */
+.name-inputs-row {
+  display: flex;
+  gap: 16px;
+}
+
+.name-inputs-row .input-group {
+  flex: 1; /* Prendent chacun la moitié de l'espace */
+}
+
+/* Sur mobile, on les met l'un sous l'autre */
+@media (max-width: 400px) {
+  .name-inputs-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.home-left {
+  flex: 4; 
+  background: linear-gradient(135deg, #F5F3FF 0%, #FFF1F2 100%); 
+  color: #3b1f8e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+}
+
+.brand-slogan {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.5; 
+  margin-bottom: 30px; 
+  color: #2e1065;
+}
+
+.highlight-text {
+  background: linear-gradient(90deg, #7C3AED, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 40px; 
+  color: #4c1d95;
+  max-width: 480px;
+}
+
+.highlight-brand-name {
+  font-size: 1.6rem; 
+  font-weight: 800; 
+  background: linear-gradient(90deg, #7C3AED, #E11D48); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* =========================================
+   LISTE DES ICÔNES
+   ========================================= */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+}
+
+.feature-list li {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center; 
+  line-height: 1.5;
+  color: #4c1d95;
+}
+
+.feature-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.icon-discover { background: linear-gradient(135deg, #7C3AED, #6D28D9); }
+.icon-mivos { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+.icon-mivibes { background: linear-gradient(135deg, #EC4899, #DB2777); }
+.icon-mitribes { background: linear-gradient(135deg, #10B981, #059669); }
+.icon-local { background: linear-gradient(135deg, #F97316, #EA580C); }
+.icon-premium { background: linear-gradient(135deg, #F59E0B, #D97706); }
+
+.feature-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4c1d95;
+}
+
+.feature-text strong {
+  font-weight: 600;
+  color: #2e1065;
+}
+
+/* =========================================
+   PARTIE DROITE (Connexion)
+   ========================================= */
+.home-right {
+  flex: 2; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: var(--bg-card);
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-tabs {
+  display: flex;
+  background-color: var(--input-bg); 
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 30px;
+  gap: 4px;
+}
+
+.tab-button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary); 
+  padding: 12px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.tab-button.active {
+  background-color: var(--bg-card); 
+  color: var(--text-primary); 
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+}
+
+.tab-button.active::after {
+  display: none;
+}
+
+/* Texte de bienvenue sous les onglets */
+.auth-subtitle {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  gap: 8px;
+}
+
+.subtitle-main {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.subtitle-secondary {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Champs de saisie */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  color: var(--text-primary);
+}
+
+.input-group input::placeholder {
+  color: var(--text-secondary);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #7C3AED;
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+/* BOUTON SE CONNECTER */
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #7C3AED 0%, #F97316 100%); 
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.2), 0 4px 14px rgba(249, 115, 22, 0.2);
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Séparateur et boutons sociaux */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.divider span {
+  padding: 0 15px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.social-login {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn-social {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--bg-card);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+}
+
+.btn-social:hover {
+  background-color: var(--input-bg);
+  border-color: var(--text-secondary);
+}
+
+.toggle-auth {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.toggle-auth span {
+  color: #7C3AED;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toggle-auth span:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  background-color: #FEF2F2;
+  color: #DC2626;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  border: 1px solid #FECACA;
+}
+
+/* =========================================
+   MODE MOBILE
+   ========================================= */
+@media (max-width: 900px) {
+  .top-header {
+    padding: 20px 30px;
+  }
+  .main-content {
+    flex-direction: column;
+  }
+  .home-left {
+    padding: 40px 30px;
+    min-height: auto;
+  }
+  .brand-slogan {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .feature-list {
+    display: none;
+  }
+  .home-right {
+    padding: 40px 30px;
+  }
+}
+
+/* =========================================
+   🌟 OVERRIDES DARK MODE POUR LA PAGE CONNEXION
+   ========================================= */
+body.dark-mode .home-left {
+  background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%); /* Violet très foncé */
+  color: #e9d5ff;
+}
+body.dark-mode .brand-slogan { color: #f3e8ff; }
+body.dark-mode .brand-description { color: #c4b5fd; }
+body.dark-mode .feature-list li { color: #c4b5fd; }
+body.dark-mode .feature-text { color: #c4b5fd; }
+body.dark-mode .feature-text strong { color: #f3e8ff; }
